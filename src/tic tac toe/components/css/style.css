@@ -1,6 +1,4 @@
-:root{
-    
-}
+
 body{
     height: 100vh;
     width: 100vw;
@@ -8,17 +6,29 @@ body{
     padding: 0;
     background:url(../../img/background.jpg)no-repeat center center/cover;
 }
-.app{
-    height: 100vh;
-    width: 100vw;
+/* flex */
+.flex-center{
     display: flex;
     align-items: center;
     justify-content: center;
 }
+.flex-column{
+    flex-direction: column;
+}
+
+/* app */
+.app{
+    height: 100vh;
+    width: 100vw;
+
+}
+
+
 
 .container{
     width: 50%;
     height: 80%;
+    position: relative;
 }
 
 .game-board{
@@ -35,9 +45,7 @@ body{
     width: 100%;
     height: 100%;
     cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+
     position: relative;
     transition: all .2s;
 }
@@ -51,8 +59,8 @@ body{
     cursor: not-allowed;
 }
 
-.square .x::after,
-.square .x::before{
+.x::after,
+.x::before{
     position: absolute;
     content: "";
     top: 50%;
@@ -60,17 +68,17 @@ body{
     height: 10px;
 }
 
-.square .x::after{
+.x::after{
     border-right: 13vw solid white;
     transform: rotate(-45deg);
 }
-.square .x::before{
+.x::before{
     border-left: 13vw solid white;
     transform: rotate(45deg);
 }
 
-.square .o::before,
-.square .o::after{
+.o::before,
+.o::after{
     content: "";
     border: 10px solid white;
     border-radius: 50%;
@@ -79,4 +87,50 @@ body{
     height: 65%;
     top: 15%;
     left: 15%;
+}
+#winner{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 300;
+    color: white;
+    background: rgba(128, 128, 128, 0.589);
+}
+#winner h2{
+    font-size: 8rem;
+}
+#winner .winner-text{
+    font-size: 12rem;
+    color: slategray;
+}
+.playing{
+    color: white;
+    font-size: 5rem;
+    
+}
+#restart{
+    padding: 1rem 2rem;
+    background: #646e7c;
+    border-radius: 10px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    transition: all .3s;
+}
+#restart:hover{
+    background: #646e7ca1;
+}
+.history{
+    display: flex;
+    align-self: center;
+    flex-direction: column;
+    height: 50%;
+
+}
+.move{
+    background: white;
+    width: 4vw;
+    height: 3vh;
+    margin: 1rem;
+    cursor: pointer;
 }

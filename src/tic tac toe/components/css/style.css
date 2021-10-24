@@ -53,41 +53,32 @@ body{
 .square:hover{
     background: rgba(143, 137, 137, 0.692);
 }
-.x,.o{
-    width: 100%;
-    height: 100%;
+.x{
+    width: 7px;
+    height: 80%;
+    transform: rotate(45deg);
     cursor: not-allowed;
-}
-
-.x::after,
-.x::before{
-    position: absolute;
-    content: "";
-    top: 50%;
-    left: 10%;
-    height: 10px;
+    background-color: white;
+    position: relative;
 }
 
 .x::after{
-    border-right: 13vw solid white;
-    transform: rotate(-45deg);
-}
-.x::before{
-    border-left: 13vw solid white;
-    transform: rotate(45deg);
+    content: "";
+    position: absolute;
+    transform: rotate(-90deg);
+    width: 100%;
+    height: 100%;
+    background-color: white;
 }
 
-.o::before,
-.o::after{
-    content: "";
+.o{
+    width: 60%;
+    height: 80%;
+    cursor: not-allowed;
     border: 10px solid white;
     border-radius: 50%;
-    position: absolute;
-    width: 60%;
-    height: 65%;
-    top: 15%;
-    left: 15%;
 }
+
 #winner{
     width: 100%;
     height: 100%;
@@ -133,4 +124,17 @@ body{
     height: 3vh;
     margin: 1rem;
     cursor: pointer;
+}
+@media (max-width:900px) {
+    .x{
+        width: 5px;
+        height: 40%;
+        transform: rotate();
+    }
+    .o{
+        height: 40%;
+    }
+    .move{
+        width: 15vw;
+    }
 }
